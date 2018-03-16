@@ -1,0 +1,8 @@
+---
+- hosts: sonarqube
+  become: yes
+  roles:
+    - role: java_internal
+    - role: geerlingguy.mysql
+    - role: geerlingguy.sonar
+
