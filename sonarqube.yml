@@ -1,14 +1,16 @@
 ---
 - hosts: sonarqube
-  become: yes
   vars:
     sonar_download_url: https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.7.2.zip
     sonar_version_directory: sonarqube-6.7.2
   roles:
-    - role: common
-    - role: geerlingguy.java
-      java_packages:
-        - java-1.8.0-openjdk
-    - role: geerlingguy.mysql
-    - role: geerlingguy.sonar
-
+    - role: python_mysql_modules
+      become: yes
+    - role: java_internal
+      become: yes
+    - role: ansible-role-sonar
+      become: yes
+      ansible_distribution_major_version: 6
+      mysql_packages:
+        - mysql57
+        - mysql57-server
