@@ -19,7 +19,7 @@
       ansible_distribution_major_version: 6
       nginx_vhosts:
         - listen: "80"
-          server_name: "52.87.158.82"
+          server_name: "sonarqube.fastfeedback.rocks.conf"
           state: "present"
           template: "{{ nginx_vhost_template }}"
           filename: "sonarqube.fastfeedback.rocks.conf"
