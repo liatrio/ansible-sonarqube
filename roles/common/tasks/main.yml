@@ -1,0 +1,16 @@
+---
+- name: make /data directory
+  file:
+    path: /data 
+    owner: ec2-user
+    group: ec2-user
+    state: directory
+    mode: 0755
+
+- name: mount persistent volume to /data
+  mount:
+    path: /data
+    src: /dev/sdh
+    fstype: ext4
+    state: present
+
