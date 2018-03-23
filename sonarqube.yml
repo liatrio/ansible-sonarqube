@@ -14,3 +14,17 @@
       mysql_packages:
         - mysql57
         - mysql57-server
+    - role: geerlingguy.nginx
+      become: yes
+      ansible_distribution_major_version: 6
+      nginx_vhosts:
+        - listen: "80"
+          server_name: "52.87.158.82"
+          state: "present"
+          template: "{{ nginx_vhost_template }}"
+          filename: "sonarqube.fastfeedback.rocks.conf"
+          extra_parameters: |
+            location / {
+                proxy_pass http://127.0.0.1:9000;
+            }
+
