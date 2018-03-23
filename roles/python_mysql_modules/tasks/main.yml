@@ -1,0 +1,14 @@
+---
+  # tasks file for mysql
+  #- name: Install python devel package
+  #  yum:
+  #    name: python27-devel.x86_64
+  #    state: latest
+
+  - name: Install python mysql package
+    yum:
+      name: MySQL-python27.x86_64
+      state: latest
+    
+  #- name: Install the Python MySQLB module
+  #  pip: name=MySQL-python
