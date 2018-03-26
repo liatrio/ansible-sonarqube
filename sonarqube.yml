@@ -4,8 +4,7 @@
     sonar_download_url: https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.7.2.zip
     sonar_version_directory: sonarqube-6.7.2
   roles:
-    - role: common
-      become: yes
+    - role: liatrio.mount_persist_data
     - role: python_mysql_modules
       become: yes
     - role: java_internal
