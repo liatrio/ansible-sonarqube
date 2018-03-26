@@ -5,6 +5,7 @@
     sonar_version_directory: sonarqube-6.7.2
   roles:
     - role: liatrio.mount_persist_data
+      become: yes
     - role: python_mysql_modules
       become: yes
     - role: java_internal
